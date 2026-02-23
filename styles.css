@@ -1,0 +1,273 @@
+:root {
+  --bg: #080b1a;
+  --panel: rgba(14, 20, 44, 0.74);
+  --line: rgba(232, 199, 112, 0.35);
+  --text: #efe9d4;
+  --accent: #e8c770;
+  --sub: #c5bfd8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Noto Serif KR", "Georgia", serif;
+  background: radial-gradient(circle at top, #1b2350, var(--bg) 58%);
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+.mist {
+  position: fixed;
+  width: 38vw;
+  height: 38vw;
+  border-radius: 50%;
+  filter: blur(70px);
+  pointer-events: none;
+  opacity: 0.35;
+}
+
+.mist-left {
+  top: 8%;
+  left: -12%;
+  background: #5d6ad8;
+}
+
+.mist-right {
+  top: 24%;
+  right: -15%;
+  background: #8a50a9;
+}
+
+.hero {
+  text-align: center;
+  padding: 5rem 1.5rem 3rem;
+}
+
+.eyebrow {
+  letter-spacing: 0.2em;
+  color: var(--accent);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+h1 {
+  font-size: clamp(2.2rem, 8vw, 4.2rem);
+  margin: 0.2rem 0 1rem;
+}
+
+.hero-copy,
+.panel-copy {
+  max-width: 760px;
+  margin: 0 auto 1rem;
+  color: var(--sub);
+}
+
+.cta {
+  display: inline-block;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  text-decoration: none;
+  padding: 0.7rem 1.2rem;
+  border-radius: 999px;
+  transition: 0.25s ease;
+}
+
+.cta:hover {
+  background: var(--accent);
+  color: #1a1630;
+}
+
+main {
+  width: min(980px, 92vw);
+  margin: 0 auto 2.5rem;
+  display: grid;
+  gap: 1.2rem;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 1.3rem 1.2rem;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(6px);
+}
+
+h2 {
+  margin-top: 0.2rem;
+  color: var(--accent);
+  font-size: 1.4rem;
+}
+
+.converter-form {
+  display: grid;
+  gap: 0.9rem;
+  max-width: 560px;
+}
+
+label {
+  display: grid;
+  gap: 0.35rem;
+  font-size: 0.95rem;
+}
+
+select,
+input,
+button {
+  padding: 0.7rem 0.8rem;
+  border-radius: 10px;
+  border: 1px solid rgba(232, 199, 112, 0.3);
+  background: rgba(11, 15, 34, 0.85);
+  color: var(--text);
+}
+
+button {
+  background: linear-gradient(135deg, #cfb060, #e8c770);
+  color: #1a1630;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.result {
+  margin-top: 0.9rem;
+  min-height: 2.2rem;
+  color: #f5edcf;
+  font-weight: 600;
+}
+
+.elements-wheel {
+  position: relative;
+  width: min(430px, 90vw);
+  aspect-ratio: 1;
+  margin: 1.1rem auto 1.3rem;
+  animation: spin 20s linear infinite;
+}
+
+.element {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  display: grid;
+  place-content: center;
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  box-shadow: 0 0 26px rgba(0, 0, 0, 0.24);
+  animation: pulse 2.8s ease-in-out infinite;
+}
+
+.element span {
+  font-size: 0.75rem;
+}
+
+.wood {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(92, 165, 94, 0.48);
+}
+
+.fire {
+  top: 26%;
+  right: 0;
+  background: rgba(214, 95, 68, 0.48);
+  animation-delay: 0.4s;
+}
+
+.earth {
+  bottom: 6%;
+  right: 16%;
+  background: rgba(189, 152, 86, 0.48);
+  animation-delay: 0.8s;
+}
+
+.metal {
+  bottom: 6%;
+  left: 16%;
+  background: rgba(143, 147, 179, 0.48);
+  animation-delay: 1.2s;
+}
+
+.water {
+  top: 26%;
+  left: 0;
+  background: rgba(70, 132, 199, 0.48);
+  animation-delay: 1.6s;
+}
+
+.wheel-core {
+  position: absolute;
+  inset: 34% 34%;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  border: 1px solid var(--line);
+  background: rgba(8, 11, 26, 0.85);
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.timeline {
+  display: grid;
+  gap: 1rem;
+  margin: 0.8rem 0 0;
+  padding-left: 1.2rem;
+}
+
+.timeline h3 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.timeline p {
+  margin: 0.25rem 0 0;
+  color: var(--sub);
+}
+
+.api-panel pre {
+  margin: 0;
+  overflow-x: auto;
+  background: rgba(8, 11, 26, 0.75);
+  border-radius: 12px;
+  padding: 1rem;
+  border: 1px solid rgba(232, 199, 112, 0.2);
+}
+
+code {
+  font-family: "Fira Code", "Consolas", monospace;
+  color: #e3f3ff;
+  font-size: 0.88rem;
+}
+
+footer {
+  text-align: center;
+  color: #a39bbd;
+  font-size: 0.86rem;
+  padding: 1.5rem 1rem 2rem;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.07); }
+}
+
+@media (max-width: 640px) {
+  .element {
+    width: 92px;
+    height: 92px;
+    font-size: 1.2rem;
+  }
+}
